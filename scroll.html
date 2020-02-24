@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="scroll.js"></script>
+<link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+<style>
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+button {
+    margin: 4px 0;
+}
+
+.save-section {
+    color: #28a745;
+    margin-bottom: 4px;
+}
+
+</style>
+</head>
+<body>
+    <div id='app' style='width: 100px'>
+        <button id='default'>Save as default</button>
+        <div class="save-section" id="saved"></div>
+        Scroll
+        <br>
+        <input value="100" id="scroll" type="number" min="1" max="5000"/> pixels every <br>
+        <input value="1000" id="seconds" type="number" step="50" min="0" max="600000"/> miliseconds<br/>
+        <button id="go">Go</button><br/>
+    </div>
+</body>
+</html>
