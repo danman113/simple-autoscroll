@@ -3,7 +3,7 @@
 	"author":"Daniel Berezin",
 	"name": "Simple Autoscroll",
 	"description": "An extension that adds the ability to automatically scroll through long pages.",
-	"version": "0.75",
+	"version": "0.8",
 	"icons": {"48":"icon.png"},
 	"offline_enabled": true,
 	"permissions": [
