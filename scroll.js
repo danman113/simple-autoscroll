@@ -1,25 +1,15 @@
 var scrolling = false
 function click(e) {
   scrolling = true
+  chrome.tabs.executeScript({
+    file: "scrollscript.js"
+  })
   chrome.browserAction.setIcon({ path: 'green.png' }, () => {
     var sec = document.getElementById('seconds').value
     var scroll = document.getElementById('scroll').value
 
     chrome.tabs.executeScript(null, {
-      code: "clearTimeout(t);console.log('Stopped');",
-    })
-
-    chrome.tabs.executeScript(null, {
-      code:
-        "var t;console.log('Scroll " +
-        scroll +
-        ' px every ' +
-        sec +
-        " milliseconds');function addscroll(e){var t=window.pageYOffset!==undefined?window.pageYOffset:(document.documentElement||document.body.parentNode||document.body).scrollTop;scroll(0,t+e)}function autoscroll(e,n){addscroll(n);t=setTimeout(function(){autoscroll(e,n)},e)}var infiscroll=true;var t;autoscroll(" +
-        sec +
-        ',' +
-        scroll +
-        ');',
+      code: `clearTimeout(t);console.log('Stopped');autoScroll(${sec}, ${scroll})`,
     })
 
     window.close()
